@@ -1,5 +1,5 @@
 #!/bin/bash
 
 echo "Installing Evince Document Viewer"
-packer -S --noconfirm --noedit -S evince-light
+sudo pacman -S --noconfirm --needed evince
 echo
