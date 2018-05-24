@@ -1,178 +1,364 @@
 # AALI - Automated Arch Linux Installer (Shell Script)
-This is an automated Arch Linux installation script that covers pre-installation as well as post-installation. It is mostly useful if the system breaks and needs to be re-installed because disk partitioning section is not included here.
+For the Linux Distros like Ubuntu, Linux Mint, Kali Linux, CentOS, etc. you can start the installation and can have a walk for 15 minutes to breathe in the fresh air. Do you wonder the same while installing Arch Linux? Oh no, Arch Linux wants you so badly that you even can't think of leaving her for a moment. She needs your continuous input. Don't you realize how much is she addicted to you? This time why don't you let her give you space to meditate. She will do her job well without your presence. But How? Let's explore. I've created an automated Arch Linux installation script that covers pre-installation as well as post-installation. It is most useful if the system breaks and needs to be re-installed because disk partitioning section is not included here.
 
 # Warning
-Do not run these scripts unless you have read this whole documentation carefully and modified the scripts accordingly for you. I am not responsible for any damage or data loss caused to you due to your negligence. You should have knowledge of what each command is doing and how to modify that command in your case. The commands that must be modified to prevent the data loss are marked as "modification required".
+Letting her play with herself is not a bad idea if you prepared her well. Do not run these scripts unless you have read this whole post carefully and modified the scripts accordingly for you. I am not responsible for any damage or data loss caused to you due to your negligence. You should have knowledge of what each command is doing and how to modify that command in your case. The commands that must be modified to prevent the data loss are marked as "modification required".
 
-If root and swap partitions does not exist in your PC, they needs to be created before this script is executed. You can use tools like fdisk, gdisk, parted or pseudo-graphics tool like cfdisk to create or modify the partitions. It is optimized for my Intel PC with UEFI boot mode hence go through the script thoroughly and make the required changes as per your specifications.
+If root and swap partitions do not exist in your disk, they need to be created before this script is executed. You can use tools like fdisk, gdisk, parted or pseudo-graphics tool like cfdisk to create or modify the partitions. It is optimized for my Intel PC with UEFI boot mode but will work on other PCs with different specs once you go through the script thoroughly and make the required changes as per your specifications.
+
+The best approach is to fork [this repo](https://github.com/ictsolved/AALI){:target="_blank"} and push your changes as per the specifications and requirements. This way the changes will be persistent and will be optimized for your PC. Afterward, whenever you need the installation of Arch on your PC, you can download your own version of this script and execute that without any hassle.
+
+My repo contains the packages that I use and are listed below. You may obviously want to use different desktop environment or a windows manager or you may not need the packages I use. Don't worry, you can simply remove the packages you don't want and add your own packages in the list. I have provided comments on every package so that you can know what each package is doing.
+
+
+Enough gossip! Now let's dive into the process. I'll take reference of my repo while showing you the examples below. Assuming you have already prepared an installation media and currently booted into it, you can follow these steps:
 
 # Step: 1
+
 Connect to the internet through LAN or Wi-Fi. To get connected through Wi-Fi, type following command:
-	
-	$ wifi-menu
+
+$ wifi-menu
 
 Select the network from the list, provide required credentials and get connected.
 
-After internet connection is successfully established, issue the following commands to download AALI scripts:
+After internet connection is successfully established, issue the following commands to download Automated Arch Linux Installer (will be denoted as AALI onwards) scripts:
 
-	$ wget https://github.com/ictsolved/aali/tarball/master
+$ wget https://github.com/ictsolved/aali/tarball/master
 
-	$ tar -xvf master
+$ tar -xvf master
 
-Now the scripts will be available in working directory along with this documentation. Make the marked changes in the scripts with nano or vi and execute.
+Now the scripts will be available in the working directory along with this documentation in the live media. If you have made changes to your scripts as per your requirements, you are ready to automate the installation. If you directly downloaded my repo, then you need to modify the marked changes in the scripts with nano or vi, else BOOM! I am not responsible for the loss of your data. Consider this precaution seriously. You can't blame me later.
 
-The best approach is to fork this repo and push your changes as per the specifications and requirements. This way the changes will be persistent and will be optimized for your PC as well. Afterwards whenever you need the installation of Arch on your PC, you can download your own version of this script and execute that without any hassle.
+What do you get in your working directory after you download the repository and untar it?
 
-What are included within it?
+A. Base Installation
 
-	A. Base Installation
+1.base-installation.sh
 
-		1.base-installation.sh
+2.configure-system.sh
 
-		2.configure-system.sh
+B. Post Installation
 
-	B. Post Installation
+1.post-installation.sh
 
-		1.post-installation.sh
-
-	C. Customization
+C. Customization
 
 # Step 2: Base Installation
-Inside this folder there are two scripts for setting up a base installation of Arch system automatically.
+Inside this directory, there are two scripts for setting up a base installation of Arch system automatically.
 
 Phase 1 - Installing base system
-Execute following command to install base system.
+Execute the following command to install the base system.
 
-	$ cd ictsolved-AALI-xxxxxxx/1.Base-Installation/
+$ cd ictsolved-AALI-xxxxxxx/1.Base-Installation/
 
-	$ ./1.base-installation.sh
+$ ./1.base-installation.sh
 
 Followings are the list of actions performed:
 
-	1. Updating system clock
+1. Updating system clock
 
-	2. Formatting root partition (modification required)
+2. Formatting root partition (modification required)
 
-	3. Mounting root and boot partitions (modification required)
+3. Mounting root and boot partitions (modification required)
 
-	4. Turning on swap (modification required)
+4. Turning on swap (modification required)
 
-	5. Cleaning boot of previous installation
+5. Cleaning bootloaders of previous arch installation (if present)
 
-	6. Updating to latest mirrors
+6. Updating to latest mirrors
 
-	7. Importing new pacman keys
+7. Importing new pacman keys
 
-	8. Installing base system
+8. Installing base system
 
-	9. Generating fstab
+9. Generating fstab
 
-	10. Changing root
+10. Changing root
 
 Phase 2 - Configuring system inside chroot
 
-Download the AALI scripts again and extract it then enter the Base Installation folder. Now issue following commands:
+Download the AALI scripts again as you did in Step 1 and extract it then enter the Base Installation folder. Now issue following commands:
 
- 	$ ./2.configure-system.sh
+$ ./2.configure-system.sh
 
 This results in:
 
-	1. Setting time-zone
+1. Setting time-zone
 
-	2. Setting up locale
+2. Setting up locale
 
-	3. Setting up Language
+3. Setting up Language
 
-	4. Setting hostname
+4. Setting hostname
 
-	5. Creating new initramfs
+5. Creating new initramfs
 
-	6. Setting up password for root user
+6. Setting up a password for root user
 
-	7. Creating user sarad
+7. Creating user sarad
 
-	8. Setting up password for sarad
+8. Setting up password for sarad
 
-	9. Enabling sudo for sarad
+9. Enabling sudo for sarad
 
-	10. Enabling multilib
+10. Enabling multilib
 
-	11. Installing Bootloader
+11. Installing Bootloader
 
-	12. Copying bootloader configurations
+12. Copying bootloader configurations
 
-	13. Updating Bootloaders
+13. Updating Bootloaders
 
-	14. Exiting chroot
+14. Exiting chroot
 
-	15. Unmounting partitions
+15. Unmounting partitions
 
- # Step 3: Post-installation
-Login as the normal user after reboot, establish internet connection and issue following commands:
+16. Reboot
 
-	$ wget https://github.com/ictsolved/aali/tarball/master
+# Step 3: Post-installation
+After the reboot, login as a normal user and establish an internet connection. Download the scripts again as you did in Step 1. You can issue following commands:
 
-	$ tar -xvf master
+$ wget https://github.com/ictsolved/aali/tarball/master
 
-	$ cd ictsolved-AALI-xxxxxxx/2.Post-installation/
+$ tar -xvf master
 
-	$ ./1.post-installation.sh
+$ cd ictsolved-AALI-xxxxxxx/2.Post-installation/
 
-Followings are the output:
+$ ./1.post-installation.sh
 
-	1. Installing Packer
+The post-installation process begins and will result in the following outputs:
 
-	2. Installing Drivers
+1. Installing Packer
 
-		i. Installing Firmware Drivers
+2. Installing Drivers
 
-		ii. Installing Display Drivers
+i. Installing Firmware Drivers
 
-		iii. Installing Sound Drivers
+ii. Installing Display Drivers
 
-		iv. Installing Device Drivers
+iii. Installing Sound Drivers
 
-		v. Installing Touchpad Drivers
+iv. Installing Device Drivers
 
-	4. Installing Applications
+v. Installing Touchpad Drivers
 
-		i. Installing Archive tools
+4. Installing Applications
 
-		ii. Installing Libre Office
+i. Installing Archive tools
 
-		iii. Installing Fonts
+ii. Installing Libre Office
 
-		iv. Installing VLC and Codecs
+iii. Installing Fonts
 
-		v. Installing General Packages
+iv. Installing VLC and Codecs
 
-		vi. Installing GIMP Photo Editor
+v. Installing General Packages
 
-		vii. Installing Google Chrome
+vi. Installing GIMP Photo Editor
 
-		viii. Installing Evince Document Viewer
+vii. Installing Google Chrome
 
-		ix. Installing Sublime Editor
+viii. Installing Evince Document Viewer
 
-		x. Installing Ruby and Gems
+ix. Installing Sublime Editor
 
-		xi. Installing redshift
+x. Installing Ruby and Gems
 
-		xii. Installing Oracle JDK
-		
-		xiii. Installing Black Arch Repo		
+xi. Installing redshift
 
-		xiv. Installing Network Manager
+xii. Installing Oracle JDK
 
-	5. Ignoring Lid Close
+xiii. Installing Black Arch Repo 
 
-	6. Remapping Insert Key to Delete Key
+xiv. Installing Network Manager
 
-	7. Fixing screen-tearing
+5. Ignoring Lid Close
 
-	8. Enabling Hibernation
+6. Enabling Hibernation
 
-After the reboot, login with your credentials and you'll be greeted with XFCE4 desktop.
+After all the steps complete, you can reboot and log in with your credentials. Now you'll be greeted with XFCE4 desktop.
 
 # Step 4: Customization
-This folder contains the customization files. Some customizations are automatically copied whereas few needs to be manually done. Hence the files inside "Manual" will be helpful to accelerate the customization but it is optional if your customizations are different.
+This folder contains the customization files. Some customizations are automatically copied whereas few needs to be manually done as per the requirements. They are configurations files and will be helpful to accelerate the customization but are optional. It also contains scripts for boot repair, i.e. if you bootloader gets tripped, you can automate the boot repair too.
+
+# AALI - Automated Arch Linux Installer (Shell Script)
+For the Linux Distros like Ubuntu, Linux Mint, Kali Linux, CentOS etc. you can start the installation and can have a walk for 15 minutes to breathe in the fresh air. Do you wonder the same while installing Arch Linux? Oh no, Arch Linux wants you so badly that you even can't think of leaving her for a moment. She needs your continuous input. Don't you realize how much is she addicted to you? This time why don't you let her give you space to meditate. She will do her job well without your presence. But How? Let's explore. I've created an automated Arch Linux installation script that covers pre-installation as well as post-installation. It is most useful if the system breaks and needs to be re-installed because disk partitioning section is not included here.
+
+# Warning
+Letting her play with herself is not a bad idea if you prepared her well. Do not run these scripts unless you have read this whole post carefully and modified the scripts accordingly for you. I am not responsible for any damage or data loss caused to you due to your negligence. You should have knowledge of what each command is doing and how to modify that command in your case. The commands that must be modified to prevent the data loss are marked as "modification required".
+
+If root and swap partitions do not exist in your disk, they need to be created before this script is executed. You can use tools like fdisk, gdisk, parted or pseudo-graphics tool like cfdisk to create or modify the partitions. It is optimized for my Intel PC with UEFI boot mode but will work on other PCs with different specs once you go through the script thoroughly and make the required changes as per your specifications.
+
+The best approach is to fork [this repo](https://github.com/ictsolved/AALI){:target="_blank"} and push your changes as per the specifications and requirements. This way the changes will be persistent and will be optimized for your PC. Afterward, whenever you need the installation of Arch on your PC, you can download your own version of this script and execute that without any hassle.
+
+My repo contains the packages that I use and are listed below. You may obviously want to use different desktop environment or a windows manager or you may not need the packages I use. Don't worry, you can simply remove the packages you don't want and add your own packages in the list. I have provided comments on every package so that you can know what are each packages doing.
+
+Enough gossip! Now let's dive into the process. I'll take reference of my repo while showing you the examples below. Assuming you have already prepared an installation media and currently booted into it, you can follow these steps:
+
+# Step: 1
+
+Connect to the internet through LAN or Wi-Fi. To get connected through Wi-Fi, type following command:
+
+$ wifi-menu
+
+Select the network from the list, provide required credentials and get connected.
+
+After internet connection is successfully established, issue the following commands to download Automated Arch Linux Installer (will be denoted as AALI onwards) scripts:
+
+$ wget https://github.com/ictsolved/aali/tarball/master
+
+$ tar -xvf master
+
+Now the scripts will be available in the working directory along with this documentation in the live media. If you have made changes to your scripts as per your requirements, you are ready to automate the installation. If you directly downloaded my repo, then you need to modify the marked changes in the scripts with nano or vi, else BOOM! I am not responsible for the loss of your data. Consider this precautions seriously, you can't blame me later.
+
+What do you get in your working directory after you download the repository and untar it?
+
+A. Base Installation
+
+1.base-installation.sh
+
+2.configure-system.sh
+
+B. Post Installation
+
+1.post-installation.sh
+
+C. Customization
+
+# Step 2: Base Installation
+Inside this directory, there are two scripts for setting up a base installation of Arch system automatically.
+
+Phase 1 - Installing base system
+Execute the following command to install the base system.
+
+$ cd ictsolved-AALI-xxxxxxx/1.Base-Installation/
+
+$ ./1.base-installation.sh
+
+Followings are the list of actions performed:
+
+1. Updating system clock
+
+2. Formatting root partition (modification required)
+
+3. Mounting root and boot partitions (modification required)
+
+4. Turning on swap (modification required)
+
+5. Cleaning bootloaders of previous arch installation (if present)
+
+6. Updating to latest mirrors
+
+7. Importing new pacman keys
+
+8. Installing base system
+
+9. Generating fstab
+
+10. Changing root
+
+Phase 2 - Configuring system inside chroot
+
+Download the AALI scripts again as you did in Step 1 and extract it then enter the Base Installation folder. Now issue following commands:
+
+$ ./2.configure-system.sh
+
+This results in:
+
+1. Setting time-zone
+
+2. Setting up locale
+
+3. Setting up Language
+
+4. Setting hostname
+
+5. Creating new initramfs
+
+6. Setting up a password for root user
+
+7. Creating user sarad
+
+8. Setting up password for sarad
+
+9. Enabling sudo for sarad
+
+10. Enabling multilib
+
+11. Installing Bootloader
+
+12. Copying bootloader configurations
+
+13. Updating Bootloaders
+
+14. Exiting chroot
+
+15. Unmounting partitions
+
+16. Reboot
+
+# Step 3: Post-installation
+After reboot, login as a normal user and establish an internet connection. Download the scripts again as you did in Step 1. You can issue following commands:
+
+$ wget https://github.com/ictsolved/aali/tarball/master
+
+$ tar -xvf master
+
+$ cd ictsolved-AALI-xxxxxxx/2.Post-installation/
+
+$ ./1.post-installation.sh
+
+The post-installation process begins and will result in the following outputs:
+
+1. Installing Packer
+
+2. Installing Drivers
+
+i. Installing Firmware Drivers
+
+ii. Installing Display Drivers
+
+iii. Installing Sound Drivers
+
+iv. Installing Device Drivers
+
+v. Installing Touchpad Drivers
+
+4. Installing Applications
+
+i. Installing Archive tools
+
+ii. Installing Libre Office
+
+iii. Installing Fonts
+
+iv. Installing VLC and Codecs
+
+v. Installing General Packages
+
+vi. Installing GIMP Photo Editor
+
+vii. Installing Google Chrome
+
+viii. Installing Evince Document Viewer
+
+ix. Installing Sublime Editor
+
+x. Installing Ruby and Gems
+
+xi. Installing redshift
+
+xii. Installing Oracle JDK
+
+xiii. Installing Black Arch Repo 
+
+xiv. Installing Network Manager
+
+5. Ignoring Lid Close
+
+6. Enabling Hibernation
+
+After all the steps complete, you can reboot and log in with your credentials. Now you'll be greeted with XFCE4 desktop.
+
+# Step 4: Customization
+This folder contains the customization files. Some customizations are automatically copied whereas few needs to be manually done as per the requirements. They are configurations files and will be helpful to accelerate the customization but is completely optional. It also contains scripts for boot repair, i.e. if you bootloader gets tripped, you can automate the boot repair too.
