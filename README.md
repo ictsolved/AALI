@@ -17,31 +17,31 @@ Enough gossip! Now let's dive into the process. I'll take reference of my repo w
 
 Connect to the internet through LAN or Wi-Fi. To get connected through Wi-Fi, type following command:
 
-$ wifi-menu
+	$ wifi-menu
 
 Select the network from the list, provide required credentials and get connected.
 
 After internet connection is successfully established, issue the following commands to download Automated Arch Linux Installer (will be denoted as AALI onwards) scripts:
 
-$ wget https://github.com/ictsolved/aali/tarball/master
+	$ wget https://github.com/ictsolved/aali/tarball/master
 
-$ tar -xvf master
+	$ tar -xvf master
 
 Now the scripts will be available in the working directory along with this documentation in the live media. If you have made changes to your scripts as per your requirements, you are ready to automate the installation. If you directly downloaded my repo, then you need to modify the marked changes in the scripts with nano or vi, else BOOM! I am not responsible for the loss of your data. Consider this precaution seriously. You can't blame me later.
 
 What do you get in your working directory after you download the repository and untar it?
 
-A. Base Installation
+	A. Base Installation
 
-1.base-installation.sh
+		1.base-installation.sh
 
-2.configure-system.sh
+		2.configure-system.sh
 
-B. Post Installation
+	B. Post Installation
 
-1.post-installation.sh
+		1.post-installation.sh
 
-C. Customization
+	C. Customization
 
 # Step 2: Base Installation
 Inside this directory, there are two scripts for setting up a base installation of Arch system automatically.
@@ -49,132 +49,132 @@ Inside this directory, there are two scripts for setting up a base installation 
 Phase 1 - Installing base system
 Execute the following command to install the base system.
 
-$ cd ictsolved-AALI-xxxxxxx/1.Base-Installation/
+	$ cd ictsolved-AALI-xxxxxxx/1.Base-Installation/
 
-$ ./1.base-installation.sh
+	$ ./1.base-installation.sh
 
 Followings are the list of actions performed:
 
-1. Updating system clock
+	1. Updating system clock
 
-2. Formatting root partition (modification required)
+	2. Formatting root partition (modification required)
 
-3. Mounting root and boot partitions (modification required)
+	3. Mounting root and boot partitions (modification required)
 
-4. Turning on swap (modification required)
+	4. Turning on swap (modification required)
 
-5. Cleaning bootloaders of previous arch installation (if present)
+	5. Cleaning bootloaders of previous arch installation (if present)
 
-6. Updating to latest mirrors
+	6. Updating to latest mirrors
 
-7. Importing new pacman keys
+	7. Importing new pacman keys
 
-8. Installing base system
+	8. Installing base system
 
-9. Generating fstab
+	9. Generating fstab
 
-10. Changing root
+	10. Changing root
 
 Phase 2 - Configuring system inside chroot
 
 Download the AALI scripts again as you did in Step 1 and extract it then enter the Base Installation folder. Now issue following commands:
 
-$ ./2.configure-system.sh
+	$ ./2.configure-system.sh
 
 This results in:
 
-1. Setting time-zone
+	1. Setting time-zone
 
-2. Setting up locale
+	2. Setting up locale
 
-3. Setting up Language
+	3. Setting up Language
 
-4. Setting hostname
+	4. Setting hostname
 
-5. Creating new initramfs
+	5. Creating new initramfs
 
-6. Setting up a password for root user
+	6. Setting up a password for root user
 
-7. Creating user sarad
+	7. Creating user sarad
 
-8. Setting up password for sarad
+	8. Setting up password for sarad
 
-9. Enabling sudo for sarad
+	9. Enabling sudo for sarad
 
-10. Enabling multilib
+	10. Enabling multilib
 
-11. Installing Bootloader
+	11. Installing Bootloader
 
-12. Copying bootloader configurations
+	12. Copying bootloader configurations
 
-13. Updating Bootloaders
+	13. Updating Bootloaders
 
-14. Exiting chroot
+	14. Exiting chroot
 
-15. Unmounting partitions
+	15. Unmounting partitions
 
-16. Reboot
+	16. Reboot
 
 # Step 3: Post-installation
 After the reboot, login as a normal user and establish an internet connection. Download the scripts again as you did in Step 1. You can issue following commands:
 
-$ wget https://github.com/ictsolved/aali/tarball/master
+	$ wget https://github.com/ictsolved/aali/tarball/master
 
-$ tar -xvf master
+	$ tar -xvf master
 
-$ cd ictsolved-AALI-xxxxxxx/2.Post-installation/
+	$ cd ictsolved-AALI-xxxxxxx/2.Post-installation/
 
-$ ./1.post-installation.sh
+	$ ./1.post-installation.sh
 
 The post-installation process begins and will result in the following outputs:
 
-1. Installing Packer
+	1. Installing Packer
 
-2. Installing Drivers
+	2. Installing Drivers
 
-i. Installing Firmware Drivers
+		i. Installing Firmware Drivers
 
-ii. Installing Display Drivers
+		ii. Installing Display Drivers
 
-iii. Installing Sound Drivers
+		iii. Installing Sound Drivers
 
-iv. Installing Device Drivers
+		iv. Installing Device Drivers
 
-v. Installing Touchpad Drivers
+		v. Installing Touchpad Drivers
 
-4. Installing Applications
+	4. Installing Applications
 
-i. Installing Archive tools
+		i. Installing Archive tools
 
-ii. Installing Libre Office
+		ii. Installing Libre Office
 
-iii. Installing Fonts
+		iii. Installing Fonts
 
-iv. Installing VLC and Codecs
+		iv. Installing VLC and Codecs
 
-v. Installing General Packages
+		v. Installing General Packages
 
-vi. Installing GIMP Photo Editor
+		vi. Installing GIMP Photo Editor
 
-vii. Installing Google Chrome
+		vii. Installing Google Chrome
 
-viii. Installing Evince Document Viewer
+		viii. Installing Evince Document Viewer
 
-ix. Installing Sublime Editor
+		ix. Installing Sublime Editor
 
-x. Installing Ruby and Gems
+		x. Installing Ruby and Gems
 
-xi. Installing redshift
+		xi. Installing redshift
 
-xii. Installing Oracle JDK
+		xii. Installing Oracle JDK
 
-xiii. Installing Black Arch Repo 
+		xiii. Installing Black Arch Repo 
 
-xiv. Installing Network Manager
+		xiv. Installing Network Manager
 
-5. Ignoring Lid Close
+	5. Ignoring Lid Close
 
-6. Enabling Hibernation
+	6. Enabling Hibernation
 
 After all the steps complete, you can reboot and log in with your credentials. Now you'll be greeted with XFCE4 desktop.
 
