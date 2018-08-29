@@ -12,3 +12,10 @@ echo -e "\nMounting boot partition\n"
 mkdir -p /mnt/boot
 mount /dev/sda2 /mnt/boot
 echo
+
+echo -e "\nMounting home partition\n"
+#Replace /dev/sda9 with your home partition
+#Reomove if you donot have separate home partition
+mkdir -p /mnt/home
+mount /dev/sda9 /mnt/home
+echo
