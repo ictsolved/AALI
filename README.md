@@ -176,7 +176,7 @@ The post-installation process begins and will result in the following outputs:
 
 	6. Enabling Hibernation
 
-After all the steps complete, you can reboot and log in with your credentials. Now you'll be greeted with XFCE4 desktop.
+After all the steps complete, you can reboot and log in with your credentials. Now you'll be greeted with XFCE4 or i3 as you installed.
 
 # Step 4: Customization
 This folder contains the customization files. Some customizations are automatically copied whereas few needs to be manually done as per the requirements. They are configurations files and will be helpful to accelerate the customization but are optional. It also contains scripts for boot repair, i.e. if you bootloader gets tripped, you can automate the boot repair too.
