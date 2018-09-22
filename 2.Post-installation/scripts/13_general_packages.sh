@@ -18,3 +18,6 @@ echo
 echo "Installing Image Viewer"
 sudo pacman -S --noconfirm --needed gpicview
 echo
+echo "Installing Screen Shooter"
+sudo pacman -S --noconfirm --needed scrot
+echo
