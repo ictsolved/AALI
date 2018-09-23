@@ -55,7 +55,7 @@ XTerm*scrollbar.width: 5
 
 ! stop output to terminal from jumping down to bottom of scroll again
 xterm*scrollTtyOutput: false
-
+xterm*scrollKey: on
 XTerm*selectToClipboard: true
 *VT100.Translations: #override \
                     Shift <Key>Up:              scroll-back(1) \n\
