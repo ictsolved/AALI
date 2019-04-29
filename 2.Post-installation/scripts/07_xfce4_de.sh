@@ -5,7 +5,7 @@ sudo pacman -S --noconfirm --needed xfce4 xfce4-goodies xfce4-pulseaudio-plugin 
 echo
 
 echo "Installing Greybird theme and icons"
-packer -S --noconfirm --noedit -S xfce-theme-greybird elementary-xfce-icons-git
+yay -S --noconfirm -S xfce-theme-greybird elementary-xfce-icons-git
 echo
 
 echo "Copying Configurations"

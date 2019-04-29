@@ -8,16 +8,18 @@ echo "Installing General Packages"
 #reflector is helps in rating pacman mirrors
 #rclone for google-drive and other cloud storage synchronization
 sudo pacman -S --noconfirm --needed gksu ntp curl gnome-keyring galculator reflector rclone
-echo
-echo "Installing File manager"
-sudo pacman -S --noconfirm --needed pcmanfm
-echo
-echo "Installing Clipboard Manager"
-sudo pacman -S --noconfirm --needed parcellite
-echo
-echo "Installing Image Viewer"
-sudo pacman -S --noconfirm --needed gpicview
-echo
-echo "Installing Screen Shooter"
-sudo pacman -S --noconfirm --needed scrot
-echo
+
+# Packages for WM
+# echo
+# echo "Installing File manager"
+# sudo pacman -S --noconfirm --needed pcmanfm
+# echo
+# echo "Installing Clipboard Manager"
+# sudo pacman -S --noconfirm --needed parcellite
+# echo
+# echo "Installing Image Viewer"
+# sudo pacman -S --noconfirm --needed gpicview
+# echo
+# echo "Installing Screen Shooter"
+# sudo pacman -S --noconfirm --needed scrot
+# echo

@@ -2,7 +2,7 @@
 
 #echo "Installing rbenv"
 #useful if multiple versions of ruby needed
-#packer -S --noconfirm --noedit -S rbenv ruby-build
+#yay -S --noconfirm -S rbenv ruby-build
 #echo "Setting PATH for rbenv"
 #echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
 #echo "Initializing rbenv"
