@@ -1,5 +1,5 @@
 #!/bin/bash
 
 echo "Installing JDK"
-sudo pacman -S jdk-openjdk
+sudo pacman -S jdk-openjdk --noconfirm --needed
 echo

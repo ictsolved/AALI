@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Installing Dependency"
+sudo pacman -S git --noconfirm --needed
+
 echo "Downloading package"
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/yay-bin.tar.gz
 curl https://github.com/Jguer/yay/releases | grep _x86_64.tar.gz | cut -d : -f 2,3 | tr -d \" | sed -n '1p' | sed 's/^.*\(Jguer.*\)/\1/g' | cut -f1 -d" " | sed "s|^|https://github.com/|" | wget -qi -

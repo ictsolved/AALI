@@ -7,7 +7,7 @@ echo "Installing General Packages"
 #galculator is a calculator
 #reflector is helps in rating pacman mirrors
 #rclone for google-drive and other cloud storage synchronization
-sudo pacman -S --noconfirm --needed gksu ntp curl gnome-keyring galculator reflector rclone
+sudo pacman -S --noconfirm --needed ntp curl gnome-keyring galculator reflector rclone
 
 # Packages for WM
 # echo
