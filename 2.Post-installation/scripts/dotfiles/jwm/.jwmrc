@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<JWM>
+    <!-- The root menu. -->
+    <RootMenu onroot="12">
+        <Program icon="terminal.png" label="Terminal">xterm</Program>
+        <Separator/>
+        <Menu label="Accessories" icon="">
+            <Program label="Archive Manager"  icon="/usr/share/icons/hicolor/48x48/apps/file-roller.png">file-roller </Program>
+            <Program label="Galculator"  icon="/usr/share/icons/hicolor/48x48/apps/galculator.png">galculator</Program>
+            <Program label="Image Viewer"  icon="/usr/share/icons/hicolor/48x48/apps/gpicview.png">gpicview </Program>
+            <Program label="Parcellite"  icon="/usr/share/pixmaps/parcellite.png">parcellite</Program>
+            <Program label="Postman"  icon="/usr/share/icons/hicolor/128x128/apps/postman.png">postman </Program>
+            <Program label="Redshift"  icon="/usr/share/icons/hicolor/scalable/apps/redshift.svg">redshift-gtk</Program>
+            <Program label="Visual Studio Code"  icon="/usr/share/icons/visual-studio-code.png">/opt/visual-studio-code/code </Program>
+        </Menu>
+        <Menu label="Graphics" icon="">
+            <Program label="Document Viewer"  icon="/usr/share/icons/hicolor/48x48/apps/org.gnome.Evince.png">evince </Program>
+            <Program label="GNU Image Manipulation Program"  icon="/usr/share/icons/hicolor/48x48/apps/gimp.png">gimp-2.10 </Program>
+            <Program label="LibreOffice Draw"  icon="/usr/share/icons/hicolor/48x48/apps/libreoffice-draw.png">libreoffice --draw </Program>
+        </Menu>
+        <Menu label="Internet" icon="">
+            <Program label="Firefox"  icon="/usr/share/icons/hicolor/48x48/apps/firefox.png">/usr/lib/firefox/firefox </Program>
+            <Program label="Franz"  icon="/usr/share/icons/hicolor/48x48/apps/franz.png">/usr/bin/franz </Program>
+            <Program label="Google Chrome"  icon="/usr/share/icons/hicolor/48x48/apps/google-chrome.png">/usr/bin/google-chrome-stable </Program>
+            <Program label="Opera"  icon="/usr/share/icons/hicolor/48x48/apps/opera.png">opera </Program>
+            <Program label="Thunderbird"  icon="/usr/share/icons/hicolor/48x48/apps/thunderbird.png">/usr/lib/thunderbird/thunderbird </Program>
+            <Program label="Transmission"  icon="/usr/share/icons/hicolor/48x48/apps/transmission.png">transmission-gtk </Program>
+            <Program label="Viber"  icon="/usr/share/icons/hicolor/48x48/apps/viber.png">viber </Program>
+            <Program label="Xtreme Download Manager"  icon="/opt/xdman/icon.png">"/opt/xdman/xdman"</Program>
+        </Menu>
+        <Menu label="Office" icon="">
+            <Program label="Document Viewer"  icon="/usr/share/icons/hicolor/48x48/apps/org.gnome.Evince.png">evince </Program>
+            <Program label="LibreOffice"  icon="/usr/share/icons/hicolor/48x48/apps/libreoffice-startcenter.png">libreoffice </Program>
+            <Program label="LibreOffice Base"  icon="/usr/share/icons/hicolor/48x48/apps/libreoffice-base.png">libreoffice --base </Program>
+            <Program label="LibreOffice Calc"  icon="/usr/share/icons/hicolor/48x48/apps/libreoffice-calc.png">libreoffice --calc </Program>
+            <Program label="LibreOffice Draw"  icon="/usr/share/icons/hicolor/48x48/apps/libreoffice-draw.png">libreoffice --draw </Program>
+            <Program label="LibreOffice Impress"  icon="/usr/share/icons/hicolor/48x48/apps/libreoffice-impress.png">libreoffice --impress </Program>
+            <Program label="LibreOffice Math"  icon="/usr/share/icons/hicolor/48x48/apps/libreoffice-math.png">libreoffice --math </Program>
+            <Program label="LibreOffice Writer"  icon="/usr/share/icons/hicolor/48x48/apps/libreoffice-writer.png">libreoffice --writer </Program>
+        </Menu>
+        <Separator/>
+        <Program icon="lock.png" label="Lock">
+            xscreensaver-command -lock
+        </Program>
+        <Separator/>
+        <Restart label="Restart" icon="restart.png"/>
+        <Exit label="Exit" confirm="true" icon="quit.png"/>
+    </RootMenu>
+    <!-- Options for program groups. -->
+    <Group>
+        <Option>tiled</Option>
+        <Option>aerosnap</Option>
+    </Group>
+    <Group>
+        <Class>Pidgin</Class>
+        <Option>sticky</Option>
+    </Group>
+    <Group>
+        <Name>xterm</Name>
+        <Option>vmax</Option>
+        <Option>notitle</Option>
+        <Option>noborder</Option>
+        <Option>x:300</Option>
+        <Option>y:200</Option>
+    </Group>
+    <Group>
+        <Name>scrcpy</Name>
+        <Option>notitle</Option>
+        <Option>noborder</Option>
+    </Group>
+    <Group>
+        <Name>xclock</Name>
+        <Option>drag</Option>
+        <Option>notitle</Option>
+    </Group>
+    <!-- Tray at the bottom. -->
+    <Tray x="0" y="-1" autohide="off" height="18">
+        <TrayButton icon="jwm-blue">root:1</TrayButton>
+        <Spacer width="2"/>
+        <Pager labeled="true"/>
+        <TaskList maxwidth="256"/>
+        <Dock/>
+        <Clock format="%h-%d %l:%M %p">
+            <Button mask="123">showdesktop</Button>
+        </Clock>
+    </Tray>
+    <!-- Visual Styles -->
+    <WindowStyle>
+        <Font>Sans-9</Font>
+        <Width>4</Width>
+        <Height>15</Height>
+        <Corner>0</Corner>
+        <Foreground>#FFFFFF</Foreground>
+        <Background>#555555</Background>
+        <Outline>#000000</Outline>
+        <Opacity>0.5</Opacity>
+        <Active>
+            <Foreground>#FFFFFF</Foreground>
+            <Background>#0077CC</Background>
+            <Outline>#000000</Outline>
+            <Opacity>1.0</Opacity>
+        </Active>
+    </WindowStyle>
+    <TrayStyle group="false" list="desktop">
+        <Font>Sans-9</Font>
+        <Background>#333333</Background>
+        <Foreground>#FFFFFF</Foreground>
+        <Outline>#000000</Outline>
+        <Opacity>0.75</Opacity>
+    </TrayStyle>
+    <TaskListStyle>
+        <Font>Sans-9</Font>
+        <Active>
+            <Foreground>white</Foreground>
+            <Background>#70849d:#2e3a67</Background>
+        </Active>
+        <Foreground>#FFFFFF</Foreground>
+        <Background>#333333</Background>
+    </TaskListStyle>
+    <PagerStyle>
+        <Outline>#000000</Outline>
+        <Foreground>#555555</Foreground>
+        <Background>#333333</Background>
+        <Text>#FFFFFF</Text>
+        <Active>
+            <Foreground>#0077CC</Foreground>
+            <Background>#004488</Background>
+        </Active>
+    </PagerStyle>
+    <MenuStyle>
+        <Font>Sans-9</Font>
+        <Foreground>#FFFFFF</Foreground>
+        <Background>#333333</Background>
+        <Outline>#000000</Outline>
+        <Active>
+            <Foreground>#FFFFFF</Foreground>
+            <Background>#0077CC</Background>
+        </Active>
+        <Opacity>0.85</Opacity>
+    </MenuStyle>
+    <PopupStyle>
+        <Font>Sans-9</Font>
+        <Foreground>#000000</Foreground>
+        <Background>#999999</Background>
+    </PopupStyle>
+    <!-- Path where icons can be found.
+         IconPath can be listed multiple times to allow searching
+         for icons in multiple paths.
+      -->
+    <IconPath>
+        /usr/share/icons/wm-icons/32x32-aquafusion
+    </IconPath>
+    <IconPath>
+        /usr/share/jwm
+    </IconPath>
+    <!-- Virtual Desktops -->
+    <!-- Desktop tags can be contained within Desktops for desktop names. -->
+    <Desktops width="2" height="1">
+        <!-- Default background. Note that a Background tag can be
+              contained within a Desktop tag to give a specific background
+              for that desktop.
+         -->
+        <Background type="solid">#111111</Background>
+    </Desktops>
+    <!-- Double click speed (in milliseconds) -->
+    <DoubleClickSpeed>400</DoubleClickSpeed>
+    <!-- Double click delta (in pixels) -->
+    <DoubleClickDelta>2</DoubleClickDelta>
+    <!-- The focus model (sloppy or click) -->
+    <FocusModel>click</FocusModel>
+    <!-- The snap mode (none, screen, or border) -->
+    <SnapMode distance="10">border</SnapMode>
+    <!-- The move mode (outline or opaque) -->
+    <MoveMode>opaque</MoveMode>
+    <!-- The resize mode (outline or opaque) -->
+    <ResizeMode>opaque</ResizeMode>
+    <!-- Key bindings -->
+    <Key key="Up">up</Key>
+    <Key key="Down">down</Key>
+    <Key key="Right">right</Key>
+    <Key key="Left">left</Key>
+    <Key key="h">left</Key>
+    <Key key="j">down</Key>
+    <Key key="k">up</Key>
+    <Key key="l">right</Key>
+    <Key key="Return">select</Key>
+    <Key key="Escape">escape</Key>
+    <Key mask="A" key="Tab">nextstacked</Key>
+    <Key mask="AS" key="Tab">prevstacked</Key>
+    <Key mask="A" key="F4">close</Key>
+    <Key mask="4" key="Alt_L">root:1</Key>
+    <Key mask="A" key="F2">window</Key>
+    <Key mask="4" key="Up">maximize</Key>
+    <Key mask="4" key="Down">minimize</Key>
+    <Key mask="4S" key="Up">maxtop</Key>
+    <Key mask="4S" key="Down">maxbottom</Key>
+    <Key mask="4S" key="Left">maxleft</Key>
+    <Key mask="4S" key="Right">maxright</Key>
+    <Key mask="4" key="Right">rdesktop</Key>
+    <Key mask="4" key="Left">ldesktop</Key>
+    <Key mask="4" key="d">showdesktop</Key>
+    <Key mask="4" key="e">exec:pcmanfm</Key>
+    <Key mask="4" key="x">exec:dmenu_run</Key>
+    <Key mask="4S" key="r">restart</Key>
+    <Key mask="CA" key="l">exit</Key>
+    <Key mask="CA" key="t">exec:xterm</Key>
+    <Key mask="4" key="Print">exec:scrot -q 100</Key>
+    <Key mask="4" key="l">exec:xscreensaver-command -lock</Key>
+    <Key mask="S" key="Pause">exec:scrot -s -q 100</Key>
+    <Key key="XF86AudioRaiseVolume">exec:amixer -q set Master 5%+ unmute</Key>
+    <Key key="XF86AudioLowerVolume">exec:amixer -q set Master 5%- unmute</Key>
+    <Key key="XF86AudioMute">exec:amixer -q set Master mute</Key>
+    <Key key="XF86MonBrightnessUp">exec:xbacklight -inc 3</Key>
+    <Key key="XF86MonBrightnessDown">exec:xbacklight -dec 3</Key>
+    <Key key="XF86AudioPlay">exec:playerctl play-pause</Key>
+    <Key key="XF86AudioNext">exec:playerctl next</Key>
+    <Key key="XF86AudioPrev">exec:playerctl previous</Key>
+    <Key key="XF86WWW">exec:google-chrome-stable</Key>
+    <Key mask="S" key="XF86WWW">exec:google-chrome-stable --incognito</Key>
+    <Key key="XF86Mail">exec:firefox --private-window</Key>
+    <Key key="XF86TouchpadToggle">exec:xterm -e xrandr --output DP1 --mode 1024x768 --same-as eDP1</Key>
+    <Key mask="S" key="XF86TouchpadToggle">exec:xterm -e xrandr --output HDMI1 --auto --same-as eDP1</Key>
+    <!-- Startup Programs -->
+    <StartupCommand>
+    	xmodmap -e "keycode 118 = Delete"
+    	xinput set-prop FocalTechPS/2\ FocalTech\ Touchpad libinput\ Tapping\ Enabled 1
+        sudo netctl start wlp3s0-Compartmentalization_wlink
+    </StartupCommand>
+</JWM>

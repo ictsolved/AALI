@@ -4,8 +4,8 @@
 #execute this script from arch installation media
 
 echo "Mounting root partition"
-#change /dev/sda5 accordingly
-mount /dev/sda5 /mnt
+#change /dev/sda7 accordingly
+mount /dev/sda7 /mnt
 echo
 
 echo "Mounting boot partition"
@@ -14,8 +14,8 @@ mount /dev/sda2 /mnt/boot
 echo
 
 echo "Turning swap on"
-#change /dev/sda6 accordingly
-swapon /dev/sda6
+#change /dev/sda8 accordingly
+swapon /dev/sda8
 echo
 
 echo "Removing old fstab"
@@ -32,7 +32,7 @@ echo "Updating tmpfs size"
 #change the size accordingly for yours to prevent any failure
 #size = RAM/2 + swap_size
 #ommit if not sure or if not needed
-echo tmpfs /tmp tmpfs nodev,nosuid,size=6G 0 0 >> /mnt/etc/fstab
+echo tmpfs /tmp tmpfs nodev,nosuid,size=3G 0 0 >> /mnt/etc/fstab
 echo
 
 echo "Changing root"
