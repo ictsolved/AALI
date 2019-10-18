@@ -19,10 +19,10 @@ echo -e "\nUpdating pacakge repository\n"
 sudo pacman -Sy
 echo
 
-echo -e "\nChoosing fastest mirror\n"
-sudo pacman -S reflector --noconfirm --needed
-sudo reflector --latest 20 --sort rate --save /etc/pacman.d/mirrorlist
-echo
+#echo -e "\nChoosing fastest mirror\n"
+#sudo pacman -S reflector --noconfirm --needed
+#sudo reflector --latest 20 --sort rate --save /etc/pacman.d/mirrorlist
+#echo
 
 echo -e "\nRemoving temporary file\n"
 rm mirrorlist

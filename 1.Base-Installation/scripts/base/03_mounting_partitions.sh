@@ -3,8 +3,8 @@
 #Note: It requires modification to prevent data loss
 
 echo -e "\nMounting root partition\n"
-#Replace /dev/sda7 with your root partition
-mount /dev/sda7 /mnt
+#Replace /dev/sda5 with your root partition
+mount /dev/sda5 /mnt
 echo
 
 echo -e "\nMounting boot partition\n"
